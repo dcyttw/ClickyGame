@@ -25,21 +25,21 @@ class App extends Component {
       this.handleScore();
       this.shuffleCards();
     } else {
-      this.setState({ message: "You guessed incorrectly! Play again!" }); 
+      this.setState({ message: "You guessed incorrectly! Play again!" });
       this.handleReset();
     }
   };
- 
+
   handleScore = () => {
     const newScore = this.state.currentScore + 1;
-    this.setState({currentScore: newScore});    
+    this.setState({ currentScore: newScore });
     if (newScore === 12) {
       this.setState({title: "YOU WIN! Play again!"});
       this.handleReset();
     }
     if (newScore >= this.state.topScore) {
       this.setState({ topScore: newScore });
-    } 
+    }
   }
 
   handleReset = () => {
@@ -51,7 +51,7 @@ class App extends Component {
     });
     this.shuffleCards();
   };
- 
+
   shuffleCards = () => {
     let array = this.state.friends;
     for (let i = array.length - 1; i > 0; i--) {
